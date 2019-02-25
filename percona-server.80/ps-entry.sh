@@ -138,10 +138,10 @@ if [ "$1" = 'mysqld' -a -z "$wantHelp" ]; then
 
 		# install TokuDB engine
 		if [ -n "$INIT_TOKUDB" ]; then
-			ps-admin --docker --enable-tokudb -u root -p $MYSQL_ROOT_PASSWORD
+			ps-admin --docker --enable-tokudb -u root -p"$MYSQL_ROOT_PASSWORD"
 		fi
 		if [ -n "$INIT_ROCKSDB" ]; then
-			ps-admin --docker --enable-rocksdb -u root -p $MYSQL_ROOT_PASSWORD
+			ps-admin --docker --enable-rocksdb -u root -p"$MYSQL_ROOT_PASSWORD"
 		fi
 
 		if [ ! -z "$MYSQL_RANDOM_ROOT_PASSWORD" ]; then
